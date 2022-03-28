@@ -1,0 +1,44 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body{
+    font-family: v.$font;
+    font-size: 2.4rem;
+    height: 100vh;
+    background-color: v.$dark;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-flow: column;
+    transition: background-image 1s ease-in-out;
+}
+
+img{
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.background {
+    content: "";
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    background-color: rgba(v.$dark, 0.6);
+    z-index: -1;
+}
