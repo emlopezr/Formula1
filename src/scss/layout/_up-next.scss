@@ -1,0 +1,66 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.up-next{
+    padding: 0 5rem;
+    flex: 0 1 auto;
+
+    .next{
+        color: v.$white;
+        text-transform: uppercase;
+        font-size: 2rem;
+        @include m.shadow;
+    }
+
+    .news{
+        display: flex;
+        gap: 1rem;    
+    }
+}
+
+.new{
+    border-top: 0.5rem solid transparent;
+    background-color: rgba(v.$dark, 0.6);
+    padding: 3rem;
+    color: v.$white;
+    min-height: 15rem;
+    max-height: 20rem;
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    
+    &:hover{
+        p, h2{
+            opacity: 1;
+        }
+    }
+    
+    p, h2{
+        margin: 0;
+        font-weight: normal;
+        @include m.shadow;
+        opacity: 0.6;
+        transition: opacity 0.2s ease;
+    }
+
+    &.active{
+        border-top: 0.5rem solid v.$red;
+
+        p, h2{
+            opacity: 1;
+        }
+    }
+
+    .row-1{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1.2rem;
+    }
+
+    .title{
+        font-size: 1.8rem;
+    }
+}
